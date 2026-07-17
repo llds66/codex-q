@@ -27,22 +27,28 @@ const weekLabel = computed(() => {
   return `一周额度(${Math.round(usage.value.week.remainingPercent)}%)`
 })
 
-const weekResetLabel = computed(() => {
-  const resetsAt = usage.value?.week?.resetsAt
-  if (!resetsAt) return '重置时间：--'
-
+function formatResetTime(resetsAt?: Date) {
+  if (!resetsAt) return '--'
   const remainingSeconds = Math.max(0, Math.floor((resetsAt.getTime() - now.value) / 1000))
-  if (remainingSeconds <= 0) return '重置时间：等待额度数据同步'
+  if (remainingSeconds <= 0) return '--'
 
   const days = Math.floor(remainingSeconds / 86_400)
   const hours = Math.floor((remainingSeconds % 86_400) / 3_600)
   const minutes = Math.floor((remainingSeconds % 3_600) / 60)
   const seconds = remainingSeconds % 60
 
-  if (days > 0) return `重置时间：${days}天${hours}时后`
-  if (hours > 0) return `重置时间：${hours}时${minutes}分后`
-  return `重置时间：${minutes}分${seconds}秒后`
-})
+  if (days > 0) return `${days}天${hours}时后`
+  if (hours > 0) return `${hours}时${minutes}分后`
+  return `${minutes}分${seconds}秒后`
+}
+
+const fiveHourResetLabel = computed(() =>
+  `5h重置时间：${formatResetTime(usage.value?.fiveHour?.resetsAt)}`,
+)
+
+const weekResetLabel = computed(() =>
+  `7d重置时间：${formatResetTime(usage.value?.week?.resetsAt)}`,
+)
 
 const statusMessage = computed(() => {
   if (loading.value) return '正在同步 Codex 额度...'
@@ -94,6 +100,7 @@ const hint = t` ${bold('r')} 刷新数据 · ${bold('q')} 退出`
       <ProgressBar :value="weekProgress" :max="100" :width="20" color="#42b883" />
       <Text fg="#42b883">{{ weekLabel }}</Text>
     </Box>
+    <Text dim>{{ fiveHourResetLabel }}</Text>
     <Text dim>{{ weekResetLabel }}</Text>
   </Box>
 
