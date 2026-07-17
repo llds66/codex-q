@@ -1,6 +1,6 @@
 {
   "name": "@llds/codex-q",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "在终端查看 Codex 五小时与一周额度",
   "license": "MIT",
   "author": "llds <858400061@qq.com>",
