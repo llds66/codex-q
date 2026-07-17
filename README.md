@@ -42,4 +42,6 @@ codex-q
 
 ## 致谢
 
-额度读取方式参考 [CodexOrbit](https://github.com/xxll569/CodexOrbit)
++ 额度读取方式参考 [CodexOrbit](https://github.com/xxll569/CodexOrbit)
+
++ [**LINUX DO 社区**](https://linux.do) (真诚 、友善 、团结 、专业)
