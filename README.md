@@ -3,7 +3,7 @@
 在终端查看 Codex 五小时额度和一周额度的 TUI 工具。
 
 ## 截图
-![screenshot](doc\SnipasteA.png)
+![screenshot](doc/SnipasteA.png)
 
 ## 使用
 
