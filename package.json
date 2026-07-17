@@ -1,5 +1,5 @@
 {
-  "name": "codex-q",
+  "name": "@llds/codex-q",
   "version": "0.1.0",
   "description": "在终端查看 Codex 五小时与一周额度",
   "license": "MIT",
@@ -10,8 +10,17 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "doc"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llds66/codex-q.git"
+  },
+  "homepage": "https://github.com/llds66/codex-q#readme",
+  "bugs": {
+    "url": "https://github.com/llds66/codex-q/issues"
+  },
   "keywords": [
     "codex",
     "quota",

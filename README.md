@@ -8,13 +8,13 @@
 ## 使用
 
 ```bash
-npx codex-q
+npx @llds/codex-q
 ```
 
 也可以全局安装：
 
 ```bash
-npm install -g codex-q
+npm install -g @llds/codex-q
 codex-q
 ```
 
