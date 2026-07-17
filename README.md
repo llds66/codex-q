@@ -7,6 +7,8 @@
 
 ## 使用
 
+> 注意：Node.js 版本 ≥ 26.3.0，运行时需使用以下--experimental-ffi标志
+
 ```bash
 npx @llds/codex-q
 ```
