@@ -24,6 +24,8 @@ codex-q
 
 | 按键 | 功能 |
 | --- | --- |
+| `Tab` / `Shift+Tab` | 切换额度、Token 统计、项目用量和模型用量页面 |
+| `↑` / `↓` | 在项目用量页面翻页 |
 | `r` | 刷新额度 |
 | `q` | 退出程序 |
 | `Ctrl+C` | 退出程序 |
@@ -37,7 +39,7 @@ codex-q
 ```
 
 程序根据日志中的 `used_percent`、`window_minutes` 和 `resets_at` 计算
-剩余额度与重置时间，不需要 OpenAI API Key。
+剩余额度与重置时间，也会汇总每个会话最新的 Token 快照，并按项目工作目录和模型展示用量，不需要 OpenAI API Key。
 
 
 ## 致谢
