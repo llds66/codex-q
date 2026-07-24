@@ -2,9 +2,22 @@
   "name": "@llds/codex-q",
   "version": "0.1.1",
   "description": "在终端查看 Codex 五小时与一周额度",
+  "keywords": [
+    "codex",
+    "quota",
+    "terminal",
+    "tui"
+  ],
+  "homepage": "https://github.com/llds66/codex-q#readme",
+  "bugs": {
+    "url": "https://github.com/llds66/codex-q/issues"
+  },
   "license": "MIT",
   "author": "llds <858400061@qq.com>",
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llds66/codex-q.git"
+  },
   "bin": {
     "codex-q": "dist/main.js"
   },
@@ -13,25 +26,14 @@
     "README.md",
     "doc"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/llds66/codex-q.git"
-  },
-  "homepage": "https://github.com/llds66/codex-q#readme",
-  "bugs": {
-    "url": "https://github.com/llds66/codex-q/issues"
-  },
-  "keywords": [
-    "codex",
-    "quota",
-    "terminal",
-    "tui"
-  ],
+  "type": "module",
   "scripts": {
     "dev": "node --experimental-ffi --disable-warning=ExperimentalWarning ./node_modules/vite/bin/vite.js",
     "build": "vite build",
     "start": "node --experimental-ffi --disable-warning=ExperimentalWarning dist/main.js",
-    "prepack": "pnpm build"
+    "prepack": "pnpm build",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "@opentui/core": "^0.4.1",
@@ -41,6 +43,7 @@
   "devDependencies": {
     "@types/node": "^26.0.0",
     "@vitejs/plugin-vue": "^6.0.0",
+    "oxfmt": "^0.60.0",
     "typescript": "~6.0.3",
     "vite": "^8.0.0"
   },

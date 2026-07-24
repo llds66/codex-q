@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Box, ProgressBar, Text } from 'vue-termui'
-import type { UsageBreakdownItem } from '../services/codexUsageReader'
-import { theme } from '../theme.js'
+import { Box, ProgressBar, Text } from "vue-termui"
+import type { UsageBreakdownItem } from "../services/codexUsageReader"
+import { theme } from "../theme.js"
 
 const props = defineProps<{
   title: string
@@ -16,7 +16,7 @@ const props = defineProps<{
 }>()
 
 function formatNumber(value: number) {
-  return new Intl.NumberFormat('en-US').format(value)
+  return new Intl.NumberFormat("en-US").format(value)
 }
 
 function formatUsageName(name: string) {
@@ -25,17 +25,27 @@ function formatUsageName(name: string) {
 </script>
 
 <template>
-  <Box border :width="72" borderStyle="rounded" :borderColor="theme.primary" :padding="1" flexDirection="column" :gap="1">
+  <Box
+    border
+    :width="72"
+    borderStyle="rounded"
+    :borderColor="theme.primary"
+    :padding="1"
+    flexDirection="column"
+    :gap="1"
+  >
     <Text v-if="!items.length && !totalItems" :fg="theme.muted">
-      {{ loading ? '正在读取用量统计…' : '本地日志中暂无可归类的用量数据' }}
+      {{ loading ? "正在读取用量统计…" : "本地日志中暂无可归类的用量数据" }}
     </Text>
     <template v-else>
       <Box flexDirection="row" :gap="2">
         <Text :fg="theme.primary" bold>{{ title }}</Text>
         <Text :fg="theme.muted">
-          {{ showPagination
-            ? `共 ${totalItems} 个${itemLabel} · 第 ${page + 1}/${pageCount} 页`
-            : `共 ${totalItems} 个${itemLabel}` }}
+          {{
+            showPagination
+              ? `共 ${totalItems} 个${itemLabel} · 第 ${page + 1}/${pageCount} 页`
+              : `共 ${totalItems} 个${itemLabel}`
+          }}
         </Text>
       </Box>
       <Box v-for="item in items" :key="item.name" flexDirection="row" :gap="2">
@@ -44,7 +54,13 @@ function formatUsageName(name: string) {
             <Text :fg="theme.accent">{{ formatUsageName(item.name) }}</Text>
             <Text :fg="theme.muted">({{ item.sessionCount }}会话)</Text>
           </Box>
-          <ProgressBar :value="item.totalTokens" :max="maxTotalTokens" :width="28" :color="theme.primary" :trackColor="theme.surface" />
+          <ProgressBar
+            :value="item.totalTokens"
+            :max="maxTotalTokens"
+            :width="28"
+            :color="theme.primary"
+            :trackColor="theme.surface"
+          />
         </Box>
         <Box flexDirection="column" :gap="0">
           <Box flexDirection="row" :gap="1">

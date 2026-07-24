@@ -1,5 +1,5 @@
-import { createApp } from 'vue-termui'
-import App from './App.vue'
+import { createApp } from "vue-termui"
+import App from "./App.vue"
 
 const app = await createApp(App, null, {
   exitOnCtrlC: true,
@@ -8,7 +8,7 @@ const app = await createApp(App, null, {
   // --disable-warning=ExperimentalWarning (the flag only silences the stderr
   // print), so in production the console would always contain that noise —
   // a Node/OpenTUI limitation.
-  consoleMode: import.meta.env.PROD ? 'disabled' : 'console-overlay',
+  consoleMode: import.meta.env.PROD ? "disabled" : "console-overlay",
 })
 
 app.mount()
