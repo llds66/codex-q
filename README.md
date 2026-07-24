@@ -1,11 +1,13 @@
 # codex-q
 
-在终端查看 Codex 五小时额度和一周额度的 TUI 工具。
+在终端查看 Codex 额度及用量的 TUI 工具。
 
 ## 截图
 
-![screenshot](doc/SnipasteB.png)
-
+![screenshot](doc/Snipaste_2a.png)
+![screenshot](doc/Snipaste_2b.png)
+![screenshot](doc/Snipaste_2c.png)
+![screenshot](doc/Snipaste_2d.png)
 ## 使用
 
 > 注意：Node.js 版本 ≥ 26.3.0，运行时需使用以下--experimental-ffi标志
