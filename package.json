@@ -1,6 +1,6 @@
 {
   "name": "@llds/codex-q",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "在终端查看 Codex 额度及用量的 TUI 工具",
   "keywords": [
     "codex",
